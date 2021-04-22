@@ -11,6 +11,7 @@ public class RandomWord {
                 championString = StdIn.readString();
             }
             else {
+                // TODO: RandomWord.java:14: Calling 'StdIn.readString()' in more than one place suggests poor design in this program. [Design]
                 StdIn.readString();
             }
             i++;
