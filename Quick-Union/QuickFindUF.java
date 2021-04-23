@@ -1,5 +1,3 @@
-import com.sun.xml.internal.bind.v2.model.annotation.Quick;
-
 public class QuickFindUF {
     private int[] id;
     private int[] size; // size of each tree
