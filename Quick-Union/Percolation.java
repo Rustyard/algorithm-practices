@@ -8,9 +8,12 @@ public class Percolation {
 
     // creates n-by-n grid, with all sites initially blocked
     public Percolation(int n) {
+        if (n <= 0) {
+            throw new IllegalArgumentException();
+        }
         N = n;
-        virtualTop = N;
-        virtualBottom = N + 1;
+        virtualTop = N * N;
+        virtualBottom = N * N + 1;
         openSites = 0;
         sites = new boolean[N * N];
         siteParent = new int[N * N + 2]; // adding 2 virtual sites, one at very top, one at very bottom
@@ -22,6 +25,10 @@ public class Percolation {
                 siteTreeSize[row * N + col] = 1;
             }
         }
+        siteParent[virtualBottom] = virtualBottom;
+        siteParent[virtualTop] = virtualTop;
+        siteTreeSize[virtualTop] = 1;
+        siteTreeSize[virtualBottom] = 1;
     }
 
     // return the root of p
@@ -60,6 +67,8 @@ public class Percolation {
      check if the site need to call union
     */
     public void open(int row, int col) {
+        if (isOpen(row, col)) return; // already open
+        row--; col--; // added this for open() isOpen() isFull() because the problem says (1,1) is upper-left site... lol
         if (row < 0 || row >= N || col < 0 || col >= N) {
             throw new IllegalArgumentException();
         }
@@ -68,10 +77,24 @@ public class Percolation {
         openSites++;
         /*
          case 1: the site is in the top row, should union() to virtual top site.
-                 no need to union to its left, right or below.
         */
         if (index < N) {
             union(index, virtualTop);
+            if (N == 1) {
+                union(index, virtualBottom); // extreme case when there is only one site, connect to both virtual sites
+            }
+            // left is open
+            if (col - 1 >= 0 && isOpen(row + 1, col - 1 + 1)) {
+                union(index, row * N + col - 1);
+            }
+            // right is open
+            if (col + 1 < N && isOpen(row + 1, col + 1 + 1)) {
+                union(index, row * N + col + 1);
+            }
+            // bottom is open
+            if (isOpen(row + 1 + 1, col + 1)) {
+                union(index, (row + 1) * N + col);
+            }
         }
         /*
          case 2: ths site is not in top row or bottom row,
@@ -79,19 +102,19 @@ public class Percolation {
         */
         else if (index < (N - 1) * N) {
             // top is open
-            if (isOpen(row - 1, col)) {
+            if (isOpen(row - 1 + 1, col + 1)) {
                 union(index, (row - 1) * N + col);
             }
             // left is open
-            if (col - 1 >= 0 && isOpen(row, col - 1)) {
+            if (col - 1 >= 0 && isOpen(row + 1, col - 1 + 1)) {
                 union(index, row * N + col - 1);
             }
             // right is open
-            if (col + 1 < N && isOpen(row, col + 1)) {
+            if (col + 1 < N && isOpen(row + 1, col + 1 + 1)) {
                 union(index, row * N + col + 1);
             }
             // bottom is open
-            if (isOpen(row + 1, col)) {
+            if (isOpen(row + 1 + 1, col + 1)) {
                 union(index, (row + 1) * N + col);
             }
         }
@@ -102,15 +125,15 @@ public class Percolation {
         else {
             union(index, virtualBottom);
             // top is open
-            if (isOpen(row - 1, col)) {
+            if (isOpen(row - 1 + 1, col + 1)) {
                 union(index, (row - 1) * N + col);
             }
             // left is open
-            if (col - 1 >= 0 && isOpen(row, col - 1)) {
+            if (col - 1 >= 0 && isOpen(row + 1, col - 1 + 1)) {
                 union(index, row * N + col - 1);
             }
             // right is open
-            if (col + 1 < N && isOpen(row, col + 1)) {
+            if (col + 1 < N && isOpen(row + 1, col + 1 + 1)) {
                 union(index, row * N + col + 1);
             }
         }
@@ -118,6 +141,7 @@ public class Percolation {
 
     // is the site (row, col) open?
     public boolean isOpen(int row, int col) {
+        row--; col--;
         if (row < 0 || row >= N || col < 0 || col >= N) {
             throw new IllegalArgumentException();
         }
@@ -126,6 +150,7 @@ public class Percolation {
 
     // is the site (row, col) full?
     public boolean isFull(int row, int col) {
+        row--; col--;
         if (row < 1 || row >= N || col < 1 || col >= N) {
             throw new IllegalArgumentException();
         }
@@ -144,14 +169,12 @@ public class Percolation {
 
     // test client (optional)
     public static void main(String[] args) {
-        Percolation percolation = new Percolation(3);
+        Percolation percolation = new Percolation(2);
 
         System.out.println(percolation.percolates());
-        percolation.open(0,0);
-        percolation.open(1,0);
-        percolation.open(2,1);
-        System.out.println(percolation.percolates());
         percolation.open(1,1);
+        System.out.println(percolation.percolates());
+        percolation.open(2,1);
         System.out.println(percolation.percolates());
     }
 }
