@@ -85,17 +85,19 @@ public class Percolation {
             if (bigN == 1) {
                 union(index, virtualBottom); // extreme case when there is only one site, connect to both virtual sites
             }
-            // left is open
-            if (col - 1 >= 0 && isOpen(row + 1, col - 1 + 1)) {
-                union(index, row * bigN + col - 1);
-            }
-            // right is open
-            if (col + 1 < bigN && isOpen(row + 1, col + 1 + 1)) {
-                union(index, row * bigN + col + 1);
-            }
-            // bottom is open
-            if (isOpen(row + 1 + 1, col + 1)) {
-                union(index, (row + 1) * bigN + col);
+            else {
+                // left is open
+                if (col - 1 >= 0 && isOpen(row + 1, col - 1 + 1)) {
+                    union(index, row * bigN + col - 1);
+                }
+                // right is open
+                if (col + 1 < bigN && isOpen(row + 1, col + 1 + 1)) {
+                    union(index, row * bigN + col + 1);
+                }
+                // bottom is open
+                if (isOpen(row + 1 + 1, col + 1)) {
+                    union(index, (row + 1) * bigN + col);
+                }
             }
         }
         /*
@@ -152,13 +154,15 @@ public class Percolation {
     }
 
     // is the site (row, col) full?
+    // which mean it's filled with water...
+    // TODO: fix the backwash incorrectness problem
     public boolean isFull(int row, int col) {
         row--;
         col--;
         if (row < 0 || row >= bigN || col < 0 || col >= bigN) {
             throw new IllegalArgumentException();
         }
-        return !sites[row * bigN + col];
+        return root(virtualTop) == root(row * bigN + col);
     }
 
     // returns the number of open sites
@@ -173,12 +177,10 @@ public class Percolation {
 
     // test client (optional)
     public static void main(String[] args) {
-        Percolation percolation = new Percolation(2);
+        Percolation percolation = new Percolation(1);
 
         System.out.println(percolation.percolates());
         percolation.open(1, 1);
-        System.out.println(percolation.percolates());
-        percolation.open(2, 1);
         System.out.println(percolation.percolates());
     }
 }
