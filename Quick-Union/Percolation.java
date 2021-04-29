@@ -203,7 +203,6 @@ public class Percolation {
 
     // is the site (row, col) full?
     // which mean it's filled with water...
-    // TODO: fix the backwash incorrectness problem
     public boolean isFull(int row, int col) {
         row--;
         col--;
