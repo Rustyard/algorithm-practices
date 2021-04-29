@@ -2,7 +2,7 @@
 practice in java
 
 algorithms [part 1](https://www.coursera.org/learn/algorithms-part1/home/info)
-- [ ] 1st week... almost done
+- [x] 1st week done, but can improve 
 
 - [ ] 2nd week
 
