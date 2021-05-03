@@ -1,3 +1,5 @@
+// this is bad
+// better one is the resizing array stack
 public class FixedCapacityStackOfStrings {
     private String[] s;
     private int N = 0;
@@ -16,6 +18,7 @@ public class FixedCapacityStackOfStrings {
     }
 
     public String pop() {
+        if (isEmpty()) return null;
         String item = s[--N];
         s[N] = null; // avoids memory leak (loitering)
         return item;

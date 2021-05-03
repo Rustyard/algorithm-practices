@@ -23,6 +23,7 @@ public class LinkedQueueofStrings {
     }
 
     public String dequeue() {
+        if (isEmpty()) return null;
         String item = first.item;
         first = first.next;
         // special cases

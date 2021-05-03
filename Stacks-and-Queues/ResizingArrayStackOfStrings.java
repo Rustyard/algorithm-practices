@@ -20,6 +20,7 @@ public class ResizingArrayStackOfStrings {
     }
 
     public String pop() {
+        if (isEmpty()) return null;
         String item = s[--N];
         s[N] = null; // avoids memory leak (loitering)
         // shrink the array when it's one-quarter full
