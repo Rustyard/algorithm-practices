@@ -1,8 +1,8 @@
-public class LinkedQueueofStrings {
+public class LinkedQueue<Type> {
     private Node first, last;
 
     private class Node {
-        String item;
+        Type item;
         Node next;
     }
 
@@ -10,7 +10,7 @@ public class LinkedQueueofStrings {
         return first == null;
     }
 
-    public void enqueue(String item) {
+    public void enqueue(Type item) {
         Node oldlast = last;
         last = new Node();
         last.item = item;
@@ -20,9 +20,9 @@ public class LinkedQueueofStrings {
         else oldlast.next = last;
     }
 
-    public String dequeue() {
+    public Type dequeue() {
         if (isEmpty()) return null;
-        String item = first.item;
+        Type item = first.item;
         first = first.next;
         // special cases
         if (isEmpty()) last = null;

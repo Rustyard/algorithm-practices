@@ -1,17 +1,17 @@
-public class ResizingArrayStackOfStrings {
-    private String[] s;
+public class ArrayStack<Type> {
+    private Type[] s;
     private int N = 0;
 
     // don't need to decide it's capacity
-    public ResizingArrayStackOfStrings() {
-        s = new String[1];
+    public ArrayStack() {
+        s = (Type[]) new Object[1];
     }
 
     public boolean isEmpty() {
         return N == 0;
     }
 
-    public void push(String item) {
+    public void push(Type item) {
         // double the array size when it's full
         if (N == s.length) {
             resize(2 * s.length);
@@ -19,9 +19,9 @@ public class ResizingArrayStackOfStrings {
         s[N++] = item;
     }
 
-    public String pop() {
+    public Type pop() {
         if (isEmpty()) return null;
-        String item = s[--N];
+        Type item = s[--N];
         s[N] = null; // avoids memory leak (loitering)
         // shrink the array when it's one-quarter full
         if (N > 0 && N == s.length/4) resize(s.length/2);
@@ -29,7 +29,7 @@ public class ResizingArrayStackOfStrings {
     }
 
     private void resize(int capacity) {
-        String[] copy = new String[capacity];
+        Type[] copy = (Type[]) new Object[capacity];
         if (N >= 0) System.arraycopy(s, 0, copy, 0, N);
         s = copy;
     }
