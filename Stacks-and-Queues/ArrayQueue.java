@@ -1,6 +1,24 @@
+import java.util.Iterator;
+
 public class ArrayQueue<Type> {
     private Type[] s;
     private int first = 0, last = 0;
+
+    private class ListIterator implements Iterator<Type> {
+        private int i = first;
+
+        @Override
+        public boolean hasNext() {
+            return i != last;
+        }
+
+        @Override
+        public Type next() {
+            Type item = s[i];
+            i = (i + 1) % s.length;
+            return item;
+        }
+    }
 
     public ArrayQueue() {
         s = (Type[]) new Object[1];

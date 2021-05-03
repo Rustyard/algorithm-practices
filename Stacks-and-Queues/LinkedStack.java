@@ -1,5 +1,27 @@
-public class LinkedStack<Type> {
+import java.util.Iterator;
+
+public class LinkedStack<Type> implements Iterable<Type>{
     private Node first = null;
+
+    @Override
+    public Iterator<Type> iterator() {
+        return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<Type> {
+        private Node current = first;
+        @Override
+        public boolean hasNext() {
+            return current != null;
+        }
+
+        @Override
+        public Type next() {
+            Type item = current.item;
+            current = current.next;
+            return item;
+        }
+    }
 
     private class Node {
         Type item;

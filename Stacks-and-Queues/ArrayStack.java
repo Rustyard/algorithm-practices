@@ -1,8 +1,28 @@
-public class ArrayStack<Type> {
+import java.util.Iterator;
+
+public class ArrayStack<Type> implements Iterable<Type>{
     private Type[] s;
     private int N = 0;
 
-    // don't need to decide it's capacity
+    @Override
+    public Iterator<Type> iterator() {
+        return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<Type> {
+        private int i = N;
+        @Override
+        public boolean hasNext() {
+            return i > 0;
+        }
+
+        @Override
+        // last in first out
+        public Type next() {
+            return s[--i];
+        }
+    }
+
     public ArrayStack() {
         s = (Type[]) new Object[1];
     }
