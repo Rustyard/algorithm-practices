@@ -17,6 +17,11 @@ public class ArrayStack<Type> implements Iterable<Type>{
         }
 
         @Override
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
+
+        @Override
         // last in first out
         public Type next() {
             return s[--i];

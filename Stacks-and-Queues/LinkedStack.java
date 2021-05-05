@@ -16,6 +16,11 @@ public class LinkedStack<Type> implements Iterable<Type>{
         }
 
         @Override
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
+
+        @Override
         public Type next() {
             Type item = current.item;
             current = current.next;
