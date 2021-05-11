@@ -1,5 +1,5 @@
 // just an example, not complete
-public class Shell {
+public class Shellsort {
     public static void sort(Comparable[] a) {
         int N = a.length;
 
