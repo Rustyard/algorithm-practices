@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Hello-World" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Quick-Union" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Stacks-and-Queues" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Elementary-Sorts" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
