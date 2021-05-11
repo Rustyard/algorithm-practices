@@ -85,7 +85,6 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         private Item[] list;
 
         ListIterator() {
-            StdRandom.setSeed(System.currentTimeMillis()); // set random seed
             if (size > 0) {
                 list = (Item[]) new Object[size];
                 System.arraycopy(items, 0, list, 0, size);

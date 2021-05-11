@@ -147,7 +147,7 @@ public class Deque<Item> implements Iterable<Item> {
     }
 
     private class Node {
-        private Item item;
+        private final Item item;
         private Node next;
         private Node prev;
 
@@ -170,7 +170,7 @@ public class Deque<Item> implements Iterable<Item> {
 
         @Override
         public Item next() {
-            if (size == 0) {
+            if (current == null) {
                 throw new NoSuchElementException();
             }
             Item item = current.item;
