@@ -8,7 +8,7 @@ algorithms [part 1](https://www.coursera.org/learn/algorithms-part1/home/info)
 
 - [ ] 2nd week (Queues, Stacks, Elementary Sorts) 
 
-  in progress...
+  almost done...
 
 - [ ] 3rd week (Mergesort, Quicksort)
 
