@@ -2,17 +2,17 @@
 practice in java
 
 algorithms [part 1](https://www.coursera.org/learn/algorithms-part1/home/info)
-- [x] 1st week (Union-Find, Algorithm Analysis) 
+- [x] 1st week (Union-Find, Algorithm Analysis)
 
-  done, but can improve 
+  done, but can improve
 
-- [ ] 2nd week (Queues, Stacks, Elementary Sorts) 
+- [x] 2nd week (Queues, Stacks, Elementary Sorts)
 
-  almost done...
+  done, will review in the future
 
 - [ ] 3rd week (Mergesort, Quicksort)
 
-  
+  in progress...
 
 - [ ] 4th week (Priority Queues, Elementary Symbol Tables)
 
