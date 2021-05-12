@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Quick-Union" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Stacks-and-Queues" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Elementary-Sorts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Mergesort" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
