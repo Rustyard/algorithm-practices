@@ -21,7 +21,7 @@ Memory: `N`, not *in-place* (`<= clogN`, insertion sort, selection sort and shel
    to `nlogn` in the worst case.
 
    > This one is not easy, see [this](https://stackoverflow.com/questions/12167630/algorithm-for-shuffling-a-linked-list-in-n-log-n-time),
-   > but still similar to mergesort, when you merge, you "flip coins".
+   > still similar to mergesort but when you merge, you "flip coins".
 
 ## Programming assignment TODO list
 
