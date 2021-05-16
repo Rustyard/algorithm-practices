@@ -1,7 +1,9 @@
-# algorithm-practices
-practice in java
+# Algorithm-practices
 
-algorithms [part 1](https://www.coursera.org/learn/algorithms-part1/home/info)
+Written in java
+
+## Algorithms, [Part 1](https://www.coursera.org/learn/algorithms-part1/home/info) TODO list
+
 - [x] 1st week (Union-Find, Algorithm Analysis)
 
   done, but can improve
@@ -12,7 +14,7 @@ algorithms [part 1](https://www.coursera.org/learn/algorithms-part1/home/info)
 
 - [ ] 3rd week (Mergesort, Quicksort)
 
-  in progress...
+  in progress... over 50% ok
 
 - [ ] 4th week (Priority Queues, Elementary Symbol Tables)
 
@@ -24,6 +26,4 @@ algorithms [part 1](https://www.coursera.org/learn/algorithms-part1/home/info)
 
 - [ ] 6th week (Hash Tables, Symbol Table Applications)
 
-  
-
-algorithms part 2 (not yet)
+## Algorithms, Part 2 (not yet)

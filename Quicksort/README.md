@@ -15,7 +15,8 @@
 Best case: compares `~nlgn` times  
 Worst case: compares `~1/2 n^2` times  
 Note that the worst case is *extremely unlikely* to happen because we **shuffle** the array before sorting, worst case
-happens only when the random shuffle happens to put everything in the desired order, which is rare.
+happens only when the random shuffle happens to put everything in the desired order, which is less likely than ***a
+thunder strike*** on me.
 
 ## Other application
 
