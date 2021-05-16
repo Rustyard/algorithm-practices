@@ -15,6 +15,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Elementary-Sorts" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Mergesort" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/out" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Quicksort" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/out/production/algorithm-practices" />
     </content>
     <content url="file://$MODULE_DIR$/out/production/algorithm-practices" />
