@@ -18,12 +18,23 @@ Written in java
 
 - [ ] 4th week (Priority Queues, Elementary Symbol Tables)
 
-  
 
 - [ ] 5th week (Balanced Search Trees and its Geometric Applications)
 
-  
 
 - [ ] 6th week (Hash Tables, Symbol Table Applications)
 
 ## Algorithms, Part 2 (not yet)
+
+nothing here
+
+## A friendly reminder
+
+When your IDE failed to fetch/pull things, do these:
+
+```
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
+This problem only happens ***somewhere in the world***, and I live there. So I wrote these to remind myself.
