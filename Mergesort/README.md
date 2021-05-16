@@ -27,6 +27,8 @@ Memory: `N`, not *in-place* (`<= clogN`, insertion sort, selection sort and shel
 
 1. [x] Finish Point.java
 
-2. [ ] Brute force algorithm
+2. [x] Brute force algorithm
 
-3. [ ] Fast algorithm
+3. [x] Fast algorithm
+
+4. [x] debug to get 100/100
