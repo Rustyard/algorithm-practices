@@ -33,14 +33,14 @@ public class Point implements Comparable<Point> {
      * Unit tests the Point data type.
      */
     public static void main(String[] args) {
-        Point p1 = new Point(0, 0);
-        Point p2 = new Point(1, 1);
-        Point p3 = new Point(0, 1);
-        Point p4 = new Point(1, 0);
-        Point p5 = new Point(1, 2);
-        Point p6 = new Point(1, -2);
-        Point p7 = new Point(0, 0);
-        Point p8 = new Point(-1, 0);
+        // Point p1 = new Point(0, 0);
+        // Point p2 = new Point(1, 1);
+        // Point p3 = new Point(0, 1);
+        // Point p4 = new Point(1, 0);
+        // Point p5 = new Point(1, 2);
+        // Point p6 = new Point(1, -2);
+        // Point p7 = new Point(0, 0);
+        // Point p8 = new Point(-1, 0);
 
         // test slopeTo() functionality OK
         // StdOut.println(p1.slopeTo(p1)); // -Infinity
@@ -105,12 +105,12 @@ public class Point implements Comparable<Point> {
      * Formally, the invoking point (x0, y0) is less than the argument point
      * (x1, y1) if and only if either y0 < y1 or if y0 = y1 and x0 < x1.
      *
-     * @param that the other point
+     * @param  that the other point
      * @return the value <tt>0</tt> if this point is equal to the argument
-     * point (x0 = x1 and y0 = y1);
-     * a negative integer if this point is less than the argument
-     * point; and a positive integer if this point is greater than the
-     * argument point
+     *         point (x0 = x1 and y0 = y1);
+     *         a negative integer if this point is less than the argument
+     *         point; and a positive integer if this point is greater than the
+     *         argument point
      */
     public int compareTo(Point that) {
         // equal
@@ -124,6 +124,18 @@ public class Point implements Comparable<Point> {
     }
 
     /**
+     * Returns a string representation of this point.
+     * This method is provide for debugging;
+     * your program should not rely on the format of the string representation.
+     *
+     * @return a string representation of this point
+     */
+    public String toString() {
+        /* DO NOT MODIFY */
+        return "(" + x + ", " + y + ")";
+    }
+
+    /**
      * Compares two points by the slope they make with this point.
      * The slope is defined as in the slopeTo() method.
      *
@@ -134,21 +146,10 @@ public class Point implements Comparable<Point> {
             public int compare(Point o1, Point o2) {
                 double o1Slope = slopeTo(o1);
                 double o2Slope = slopeTo(o2);
+                // shouldn't compare x and y
                 return Double.compare(o1Slope, o2Slope);
             }
         }
         return new SlopeOrder();
-    }
-
-    /**
-     * Returns a string representation of this point.
-     * This method is provide for debugging;
-     * your program should not rely on the format of the string representation.
-     *
-     * @return a string representation of this point
-     */
-    public String toString() {
-        /* DO NOT MODIFY */
-        return "(" + x + ", " + y + ")";
     }
 }
