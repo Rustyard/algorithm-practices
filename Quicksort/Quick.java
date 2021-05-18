@@ -66,6 +66,32 @@ public class Quick {
         return a[k];
     }
 
+    /**
+     * 3-way Quicksort: the faster quicksort for HUGE DUPES, better than the original.
+     * Basic idea: partitioning the array into 3-parts: less than partition
+     * point, equal to partition point, and greater than partition point.
+     * It's also the fast solution for Dutch National Flag problem by Dijkstra.
+     *
+     * @param a  The array to be sorted.
+     * @param lo The lower bound index.
+     * @param hi The higher bound index.
+     */
+    public static void sort3p(Comparable[] a, int lo, int hi) {
+        if (hi <= lo) return;
+        int lt = lo, gt = hi; // less than and greater than: used in 3-way partitioning
+        Comparable v = a[lo]; // partitioning point
+        int i = lo; // current point
+        while (i <= gt) {
+            int cmp = a[i].compareTo(v);
+            if (cmp < 0) exchange(a, lt++, i++);
+            else if (cmp > 0) exchange(a, i, gt--);
+            else i++;
+        }
+
+        sort3p(a, lo, lt - 1);
+        sort3p(a, gt + 1, hi);
+    }
+
     private static boolean less(Comparable v, Comparable w) {
         return v.compareTo(w) < 0;
     }

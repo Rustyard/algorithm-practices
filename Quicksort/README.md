@@ -30,4 +30,6 @@ See `select()` in `Quick.java` for more detail.
    always between `1/2 nlgn` and `nlgn` compares
 
 2. How about `quicksort`?  
-   goes quadratic unless partition stops on equal keys!
+   goes quadratic unless partition stops on equal keys!  
+   *How to solve it:* Remember the *Dutch National Flag* Problem in the Elementary-Sorts section? Its solution is
+   actually very useful in this problem!

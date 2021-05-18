@@ -30,11 +30,12 @@ nothing here
 
 ## A friendly reminder
 
-When your IDE failed to fetch/pull things, do these:
+When your IDE failed to fetch/push things, try to do these:
 
 ```
 git config --global --unset http.proxy
 git config --global --unset https.proxy
+git config --global http.sslVerify "false"
 ```
 
 This problem only happens ***somewhere in the world***, and I live there. So I wrote these to remind myself.
