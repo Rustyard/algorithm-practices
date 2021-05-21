@@ -14,7 +14,7 @@ Written in java
 
 - [ ] 3rd week (Mergesort, Quicksort)
 
-  in progress... over 50% ok
+  in progress... nearly done, I slowed down due to some assignment.
 
 - [ ] 4th week (Priority Queues, Elementary Symbol Tables)
 
