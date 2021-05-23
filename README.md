@@ -12,12 +12,13 @@ Written in java
 
   done, will review in the future
 
-- [ ] 3rd week (Mergesort, Quicksort)
+- [x] 3rd week (Mergesort, Quicksort)
 
-  in progress... over 50% ok
+  done, but interview problems not really solved
 
 - [ ] 4th week (Priority Queues, Elementary Symbol Tables)
 
+  In progress...
 
 - [ ] 5th week (Balanced Search Trees and its Geometric Applications)
 

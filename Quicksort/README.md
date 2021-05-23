@@ -63,9 +63,24 @@ Given two sorted arrays `a[]` and `b[]`, of lengths `n1` and `n2` and an integer
 to find a key of rank k. The order of growth of the worst case running time of your algorithm should be `logn`,
 where `n = n1 + n2`.
 
+- Version 1: `n1 = n2` (equal length arrays) and `k = n / 2` (median).
+- Version 2: `k = n / 2` (median).
+- Version 3: no restrictions.
+
+> - Approach A: Compute the median in `a[]` and the median in `b[]`. Recur in a subproblem of roughly half the size.
+> - Approach B: Design a constant-time algorithm to determine whether `a[i]` is a key of rank `k`. Use this subroutine and binary search.
 >
+> This problem is really tricky, I didn't get it.
 
 ### 3. Decimal dominants
 
 Given an array with `n` keys, design an algorithm to find all values that occur more than `n/10` times. The expected
 running time of your algorithm should be linear.
+
+> Solution 1: Find the `(n/10)th` largest key in `a` (NOTE: this means we find `a[n/10]` when a is sorted i.e.
+> No care about duplicates), and iterate through `a` to check if `a[n/10]` appeared more than `n/10`
+> times, if it does, add it to the return list, else do nothing. Now do the same thing for
+> `(2n/10)th` largest key, and `(3n/10)th` and so on (DO CARE ABOUT DUPLICATES in the return list)
+> until `(9n/10)th` largest key. This process takes `~9n` (or `10n`? I'm confused.) time which is linear.
+>
+> Solution 2: use 9 counters (I didn't investigate a bit on this).

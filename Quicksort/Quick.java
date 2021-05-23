@@ -48,7 +48,8 @@ public class Quick {
 
     /**
      * Quick-select based on quicksort (uses partitioning).
-     * Select the k-th biggest item in the array a, in linear time on average.
+     * Select the k-th biggest item in the array a (or more precisely, a[k] when a is sorted),
+     * in linear time on average.
      *
      * @param a The array to select.
      * @param k Demands the returning item to be k-th biggest
