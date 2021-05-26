@@ -1,8 +1,13 @@
 import java.util.Iterator;
 
-public class ArrayQueue<Type> {
+public class ArrayQueue<Type> implements Iterable<Type> {
     private Type[] s;
     private int first = 0, last = 0;
+
+    @Override
+    public Iterator<Type> iterator() {
+        return new ListIterator();
+    }
 
     private class ListIterator implements Iterator<Type> {
         private int i = first;
