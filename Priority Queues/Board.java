@@ -10,15 +10,13 @@ import edu.princeton.cs.algs4.StdOut;
 import java.util.Arrays;
 
 public class Board {
-    private Stack<Board> neighbors;
-    private int[][] tiles;
-    private int n; // board dimension (N*N board)
+    private final int[][] tiles;
+    private final int n; // board dimension (N*N board)
 
     // create a board from an n-by-n array of tiles
     // where tiles[row][col] = tile at (row, col)
 
     public Board(int[][] tiles) {
-        neighbors = new Stack<>();
         n = tiles.length; // get n
         this.tiles = new int[n][n];
         for (int i = 0; i < n; i++) {
@@ -47,7 +45,33 @@ public class Board {
 
     // all neighboring boards
     public Iterable<Board> neighbors() {
-        setNeighbors(); // calculate all neighbors
+        Stack<Board> neighbors = new Stack<>();
+        int row0 = -1, col0 = -1; // the position of blank square
+        // find blank
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (tiles[i][j] == 0) {
+                    row0 = i;
+                    col0 = j;
+                    break;
+                }
+            }
+            if (row0 != -1) break;
+        }
+
+        // adding neighboring boards
+        if (col0 - 1 >= 0) {
+            neighbors.push(new Board(exchange(row0, col0, row0, col0 - 1)));
+        }
+        if (col0 + 1 < n) {
+            neighbors.push(new Board(exchange(row0, col0, row0, col0 + 1)));
+        }
+        if (row0 - 1 >= 0) {
+            neighbors.push(new Board(exchange(row0, col0, row0 - 1, col0)));
+        }
+        if (row0 + 1 < n) {
+            neighbors.push(new Board(exchange(row0, col0, row0 + 1, col0)));
+        }
         return neighbors;
     }
 
@@ -147,34 +171,5 @@ public class Board {
             s.append("\n");
         }
         return s.toString();
-    }
-
-    private void setNeighbors() {
-        int row0 = -1, col0 = -1; // the position of blank square
-        // find blank
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (tiles[i][j] == 0) {
-                    row0 = i;
-                    col0 = j;
-                    break;
-                }
-            }
-            if (row0 != -1) break;
-        }
-
-        // adding neighboring boards
-        if (col0 - 1 >= 0) {
-            neighbors.push(new Board(exchange(row0, col0, row0, col0 - 1)));
-        }
-        if (col0 + 1 < n) {
-            neighbors.push(new Board(exchange(row0, col0, row0, col0 + 1)));
-        }
-        if (row0 - 1 >= 0) {
-            neighbors.push(new Board(exchange(row0, col0, row0 - 1, col0)));
-        }
-        if (row0 + 1 < n) {
-            neighbors.push(new Board(exchange(row0, col0, row0 + 1, col0)));
-        }
     }
 }
