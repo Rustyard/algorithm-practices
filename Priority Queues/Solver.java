@@ -38,24 +38,16 @@ public class Solver {
             tempNode.currentBoard.neighbors().forEach(board -> {
                 // don't insert board that is identical to the previous board
                 if (finalTempNode.previousNode == null) {
-                    originalMinPQ
-                            .insert(new SearchNode(board, finalTempNode.numberOfMoves + 1,
-                                    finalTempNode));
+                    originalMinPQ.insert(new SearchNode(board, finalTempNode.numberOfMoves + 1, finalTempNode));
                 } else if (!board.equals(finalTempNode.previousNode.currentBoard))
-                    originalMinPQ
-                            .insert(new SearchNode(board, finalTempNode.numberOfMoves + 1,
-                                    finalTempNode));
+                    originalMinPQ.insert(new SearchNode(board, finalTempNode.numberOfMoves + 1, finalTempNode));
             });
             SearchNode finalTwinTempNode = twinTempNode;
             twinTempNode.currentBoard.neighbors().forEach(board -> {
                 if (finalTwinTempNode.previousNode == null) {
-                    twinMinPQ
-                            .insert(new SearchNode(board, finalTwinTempNode.numberOfMoves + 1,
-                                    finalTwinTempNode));
+                    twinMinPQ.insert(new SearchNode(board, finalTwinTempNode.numberOfMoves + 1, finalTwinTempNode));
                 } else if (!board.equals(finalTwinTempNode.previousNode.currentBoard))
-                    twinMinPQ
-                            .insert(new SearchNode(board, finalTwinTempNode.numberOfMoves + 1,
-                                    finalTwinTempNode));
+                    twinMinPQ.insert(new SearchNode(board, finalTwinTempNode.numberOfMoves + 1, finalTwinTempNode));
             });
 
             tempNode = originalMinPQ.delMin();
