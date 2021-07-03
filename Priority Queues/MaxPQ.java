@@ -1,5 +1,5 @@
 public class MaxPQ<Key extends Comparable<Key>> {
-    private final Key[] pq;
+    private final Key[] pq; // note: pq[0] is unused
     private int N; // number of objects
 
     public MaxPQ(int capacity) {

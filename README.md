@@ -1,6 +1,4 @@
-# Algorithm-practices
-
-Written in java
+# Algorithm-practices (Java)
 
 ## Algorithms, [Part 1](https://www.coursera.org/learn/algorithms-part1/home/info) TODO list
 

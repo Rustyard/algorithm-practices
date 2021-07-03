@@ -1,6 +1,6 @@
 # Priority Queue
 
-A queue that dequeues maximum/minimum item from itself.
+A queue that dequeues maximum/minimum/... item from itself.
 
 ## Interview problems
 
@@ -8,10 +8,14 @@ A queue that dequeues maximum/minimum item from itself.
    time**, and remove-the-median in **logarithmic time**. If the number of keys in the data type is even, find/remove
    the *lower median*.
 
+> Solved with code [DynamicMedian.java](DynamicMedian.java)
+
 2. **Randomized priority queue.** Describe how to add the methods `sample()` and
    `delRandom()` to our binary heap implementation. The two methods return a key that is chosen uniformly at random
    among the remaining keys, with the latter method also removing that key. The `sample()` method should take constant
    time; the `delRandom()` method should take logarithmic time. Do not worry about resizing the underlying array.
+
+> Solved with code [RandomMaxPQ.java](RandomMaxPQ.java)
 
 3. **Taxicab numbers.** A taxicab number is an integer that can be expressed as the sum of two cubes of positive
    integers in two different ways: `a^3 + b^3 = c^3 + d^3`
@@ -20,3 +24,5 @@ A queue that dequeues maximum/minimum item from itself.
 
     - Version 1: Use time proportional to `n^2logn` and space proportional to `n^2`.
     - Version 2: Use time proportional to `n^2logn` and space proportional to `n`.
+
+> How?
