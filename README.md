@@ -16,7 +16,7 @@
 
 - [ ] 4th week (Priority Queues, Elementary Symbol Tables)
 
-  Paused because of upcoming final exams
+  half done, 1 interview problem remain
 
 - [ ] 5th week (Balanced Search Trees and its Geometric Applications)
 
@@ -38,3 +38,19 @@ git config --global http.sslVerify "false"
 ```
 
 This problem only happens ***somewhere in the world***, and I live there. So I wrote these to remind myself.
+
+## A friendly reminder 2
+
+![protip1](picture/protip1.png)
+
+In `%IDEA_Folder%/plugins/maven/lib/maven3/conf/settings.xml`
+
+```xml
+<!-- 最新阿里maven镜像库 https-->
+<mirror>
+  <id>aliyunmaven</id>
+  <mirrorOf>*</mirrorOf>
+  <name>阿里云公共仓库</name>
+  <url>https://maven.aliyun.com/repository/public</url>
+</mirror>
+```
