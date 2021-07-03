@@ -25,4 +25,4 @@ A queue that dequeues maximum/minimum/... item from itself.
     - Version 1: Use time proportional to `n^2logn` and space proportional to `n^2`.
     - Version 2: Use time proportional to `n^2logn` and space proportional to `n`.
 
-> How?
+> 
