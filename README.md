@@ -16,7 +16,7 @@
 
 - [ ] 4th week (Priority Queues, Elementary Symbol Tables)
 
-  In progress...
+  Paused because of upcoming final exams
 
 - [ ] 5th week (Balanced Search Trees and its Geometric Applications)
 
