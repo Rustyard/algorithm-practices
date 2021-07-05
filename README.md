@@ -1,5 +1,7 @@
 # Algorithm-practices (Java)
 
+Re-create the wheels
+
 ## Algorithms, [Part 1](https://www.coursera.org/learn/algorithms-part1/home/info) TODO list
 
 - [x] 1st week (Union-Find, Algorithm Analysis)
