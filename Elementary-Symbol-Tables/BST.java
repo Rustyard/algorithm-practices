@@ -139,6 +139,10 @@ public class BST<Key extends Comparable<Key>, Value> {
         inorder(x.right, q); // node's right subtree recursive
     }
 
+    public Node getRoot() {
+        return root;
+    }
+
     private class Node {
         private Key key;
         private Value val;
