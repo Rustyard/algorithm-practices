@@ -16,12 +16,13 @@ Re-create the wheels
 
   done, but interview problems not really solved
 
-- [ ] 4th week (Priority Queues, Elementary Symbol Tables)
+- [x] 4th week (Priority Queues, Elementary Symbol Tables)
 
-  half done, 1 interview problem remain
+  nearly done, 1 interview problem remains
 
 - [ ] 5th week (Balanced Search Trees and its Geometric Applications)
 
+  In progress...
 
 - [ ] 6th week (Hash Tables, Symbol Table Applications)
 
