@@ -19,6 +19,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Priority Queues" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Elementary-Symbol-Tables" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Balanced-Search-Trees" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/BST-Geometric-Applications" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/out/production/algorithm-practices" />
     </content>
     <content url="file://$MODULE_DIR$/out/production/algorithm-practices" />

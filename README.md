@@ -20,11 +20,13 @@ Re-create the wheels
 
   nearly done, 1 interview problem remains
 
-- [ ] 5th week (Balanced Search Trees and its Geometric Applications)
+- [x] 5th week (Balanced Search Trees and its Geometric Applications)
 
-  In progress...
+  91/100, definitely improvable
 
 - [ ] 6th week (Hash Tables, Symbol Table Applications)
+
+  in progress...
 
 ## Algorithms, Part 2 (not yet)
 
